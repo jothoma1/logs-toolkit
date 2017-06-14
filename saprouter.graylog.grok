@@ -1,0 +1,2 @@
+Configuration
+  grok_pattern: ^%{DAY} %{MONTH} %{MONTHDAY} %{TIME} %{YEAR} (?<saprouter_action>(CONNECT FROM|CONNECT TO|DISCONNECT)) %{DATA:saprouter_info} host %{IP:saprouter_clienthost_ip}/%{DATA:saprouter_port} \(%{DATA:saprouter_info2}\)$
