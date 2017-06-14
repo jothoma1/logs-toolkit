@@ -1,0 +1,4 @@
+SUDO_incorrect Condition
+  Will only attempt to run if the message includes the string USER=
+Configuration
+  grok_pattern: ^%{DATA:user} : %{DATA:sudo_message} ; TTY=%{DATA:sudo_tty} ; PWD=%{DATA:sudo_pwd} ; USER=%{DATA:sudo_user} ; COMMAND=%{DATA:sudo_command}$
