@@ -1,0 +1,4 @@
+SSHD_SUCCESS Condition
+  Will only attempt to run if the message includes the string Accepted
+Configuration
+  grok_pattern: ^(?<sshd_result>Accepted) %{WORD:sshd_auth_type} for %{USERNAME:sshd_user} from %{IP:sshd_client_ip} port %{NUMBER:sshd_port} %{WORD:sshd_protocol}(: %{GREEDYDATA:sshd_cipher}$|$)
