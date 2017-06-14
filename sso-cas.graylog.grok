@@ -1,0 +1,2 @@
+Configuration
+  grok_pattern: ^%{DAY} %{MONTH} %{MONTHDAY} %{TIME} (CEST|CET) %{YEAR} - AUTHENTICATION_%{DATA:sso_result} for '\[username: %{DATA:sso_uid}\]' from '%{IPV4}'$
