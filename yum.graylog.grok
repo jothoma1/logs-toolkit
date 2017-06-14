@@ -1,0 +1,4 @@
+Condition
+  Will only attempt to run if the message matches the regular expression Installed|Erased|Updated
+Configuration
+  grok_pattern: ^%{DATA:action}: %{DATA:package}$
