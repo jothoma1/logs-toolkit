@@ -1,0 +1,2 @@
+Sympa_notAllowed Configuration
+  grok_pattern: ^notice Sympa::Spindle::AuthorizeMessage::_twist\(\) Message Sympa::Message <%{DATA:sympa_message}> for Sympa::List <%{DATA:sympa_list}> from %{DATA:sympa_sender} rejected\(\) because sender not allowed
