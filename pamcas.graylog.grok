@@ -1,0 +1,4 @@
+Condition
+  Will only attempt to run if the message includes the string authentication failure for user
+Configuration
+  grok_pattern: ^authentication failure for user '%{USERNAME:pam_cas_user}' : %{GREEDYDATA:pam_cas_reason}$
