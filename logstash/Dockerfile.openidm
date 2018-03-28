@@ -1,0 +1,22 @@
+# Logstash pour les logs d'audit OpenIDM
+FROM docker.elastic.co/logstash/logstash:5.6.4
+
+MAINTAINER Johan THOMAS version: 1.1
+
+ENV XPACK_MONITORING_ENABLED false
+ENV LOG_LEVEL warn
+
+RUN rm -f /usr/share/logstash/pipeline/logstash.conf
+
+RUN logstash-plugin install logstash-input-jdbc
+RUN logstash-plugin install logstash-output-gelf
+RUN logstash-plugin install logstash-filter-translate
+RUN logstash-plugin install logstash-filter-cidr
+RUN mkdir /usr/share/logstash/last
+RUN chmod -R 777 /usr/share/logstash/last
+
+COPY mysql-connector-java-5.1.45-bin.jar /etc/logstash/conf.d/mysql-connector-java-5.1.44-bin.jar
+
+COPY openidm.conf /etc/
+
+CMD ["-f", "/etc/openidm.conf"]
