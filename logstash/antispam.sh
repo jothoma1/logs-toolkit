@@ -30,5 +30,7 @@ else
                         wget -q --passive-ftp -r ftp://$RENATERPWD@$INIT/$DOMAIN/$DATE.log
                         diff --unchanged-line-format= ./$INIT/$DOMAIN/$DATE.log.0 ./$INIT/$DOMAIN/$DATE.log
                 fi
+                #suppression des vieux logs
+                find ./$INIT/$DOMAIN/ -type f -not -name "*$DATE.*" -exec rm -f {} \;
         done
 fi
