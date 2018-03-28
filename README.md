@@ -7,10 +7,10 @@ It can help you to manage correctly your logs. Examples for:
 - Checkpoint firewall
 - SSHD
 - SUDO
-- SYMPA Mailing lists
+- SYMPA Mailing lists http://www.sympa.org
 - YUM updates
 - APACHE Web servers
-- SHIBBOLETH
+- SHIBBOLETH https://www.shibboleth.net
 - Windows (standard logs, System Center Endpoint Protection and Sysmon)
 - OPENIDM audit logs with logstash
 - RENATER Antispam logs from FTP with logstash
