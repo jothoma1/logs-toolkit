@@ -1,2 +1,2 @@
-# graylog-grok
-Grok Patterns for our Graylog cluster
+# grok nxlog logstash
+Sample configurations for NXLog, Logstash and Grok Patterns for our Graylog cluster
