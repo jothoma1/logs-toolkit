@@ -1,0 +1,21 @@
+# Logstash pour les logs de l'antispam RENATER
+FROM docker.elastic.co/logstash/logstash:5.6.4
+
+MAINTAINER Johan THOMAS version: 0.8
+
+ENV XPACK_MONITORING_ENABLED false
+ENV LOG_LEVEL warn
+
+RUN rm -f /usr/share/logstash/pipeline/logstash.conf
+#RUN rm -f /data/.logstash_lastrun_GI
+USER root
+RUN yum install -y wget
+
+RUN logstash-plugin install logstash-output-gelf
+
+#VOLUME /data
+
+COPY logstash-antispam.conf /data/
+COPY antispam.sh /data/
+
+CMD ["-f", "/data/logstash-antispam.conf"]
