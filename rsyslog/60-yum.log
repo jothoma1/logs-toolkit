@@ -1,0 +1,15 @@
+# Centralisation des logs
+# YUM en GELF
+input(
+  type="imfile"
+  File="/var/log/yum.log"
+  Tag="yum"
+  Severity="info"
+  Facility="local7"
+  ruleset="yum"
+)
+
+ruleset(name="yum") {
+  action(type="mmnormalize" rulebase="/etc/rsyslog.d/rules/yum.rb")
+  call graylog-ext
+}
