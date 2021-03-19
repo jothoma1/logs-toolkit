@@ -1,5 +1,5 @@
-# grok nxlog logstash
-Sample configurations for NXLog, Logstash and Grok Patterns for Graylog cluster
+# Logs toolkitgrok nxlog logstash
+Sample configurations for great logging tools like Graylog, Rsyslog, NXLog, Vector https://vector.dev, Logstash and Grok Patterns
 
 It can help you to manage correctly your logs. Examples for:
 - Checkpoint
